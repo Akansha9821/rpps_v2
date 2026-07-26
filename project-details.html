@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RPPS Project Workspace</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="workspace-page">
+<header class="workspace-header"><a class="brand" href="index.html"><span class="brand-icon">R</span><span>RPPS PROJECT DASHBOARD</span></a><nav><a href="index.html">Home</a><a href="dashboard.html">Candidate Profile</a></nav></header>
+<main class="workspace-layout">
+  <aside class="workspace-sidebar">
+    <h2 id="sidebarHeading">Project Tasks</h2>
+    <div id="selectedProjectMini"></div>
+    <div id="taskSidebarList" class="task-sidebar-list"></div>
+    <a class="btn btn-primary full" href="index.html#recommendation">Show All Projects</a>
+  </aside>
+  <section class="workspace-main">
+    <div class="task-summary" id="taskSummaryTabs">
+      <button class="summary-tab" data-type="daily"><small>DAILY TASKS</small><strong id="dailyCount">0 Active</strong></button>
+      <button class="summary-tab" data-type="weekly"><small>WEEKLY TASK</small><strong id="weeklyCount">0 Active</strong></button>
+      <button class="summary-tab" data-type="monthly"><small>MONTHLY TASK</small><strong id="monthlyCount">0 Active</strong></button>
+      <button class="summary-tab" data-type="yearly"><small>YEARLY PROJECT DELIVERY</small><strong id="yearlyCount">0 Active</strong></button>
+    </div>
+    <section class="project-form-card">
+      <div class="project-form-title"><h1>Project Details</h1><span id="taskBadge" class="badge"></span></div>
+      <label>Project/Task Name<input id="detailTitle" readonly></label>
+      <label>Required Skills<input id="detailSkills" readonly></label>
+      <div class="form-grid"><label>Start Date<input id="detailStart" type="date"></label><label>End Date<input id="detailEnd" type="date"></label></div>
+      <div class="form-grid"><label>Priority<select id="detailPriority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="milestone">Milestone</option></select></label><label>Allocated Budget<div class="input-prefix"><span>$</span><input id="detailBudget" type="number" min="0"></div></label></div>
+      <hr>
+      <h3>Helpful Resources</h3><div id="detailResources" class="resource-links"></div>
+      <section class="video-section"><h3>Project Video</h3><div id="videoContainer" class="video-container"></div></section>
+      <label>Instruction / Description<textarea id="detailDescription" rows="6"></textarea></label>
+      <div class="workspace-actions"><button id="saveWorkspaceBtn" class="btn btn-primary">Save Workspace Changes</button></div>
+      <p id="workspaceMessage" class="form-message"></p>
+    </section>
+  </section>
+</main>
+<script src="js/common.js"></script><script src="js/project-details.js"></script>
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RPPS Dashboard</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="dashboard-page">
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon">R</span><span>RPPS PROJECT DASHBOARD</span></a><nav class="main-nav"><a href="index.html">Home</a><a href="index.html#recommendation">Recommendation</a><a id="csvAdminLink" class="hidden" href="csv-admin.html">CSV Admin</a><button id="logoutBtn" class="btn btn-danger hidden">Logout</button></nav></header>
+<main class="section-shell">
+  <div class="section-heading"><h1>Candidate Dashboard</h1><p id="sessionMessage">Login is required to access dashboard analytics.</p></div>
+  <div id="dashboardContent" class="hidden">
+    <div class="stats-grid">
+      <div class="stat"><span id="statProjects">0</span><small>Total Projects</small></div>
+      <div class="stat"><span id="statRecommendations">0</span><small>Recommended</small></div>
+      <div class="stat"><span id="statApplications">0</span><small>Applications</small></div>
+      <div class="stat"><span id="statBestMatch">0%</span><small>Best Match</small></div>
+    </div>
+    <section class="dashboard-card">
+      <div class="section-heading left"><h2>Project Recommendation Analytics</h2><p>Current ranking based on your saved skills.</p></div>
+      <div id="analyticsBars" class="analytics-bars"></div>
+    </section>
+    <section class="dashboard-card">
+      <div class="section-heading left"><h2>Application History</h2></div>
+      <div class="table-wrap"><table><thead><tr><th>Project</th><th>Match</th><th>Status</th><th>Date</th><th>Open</th></tr></thead><tbody id="applicationTable"></tbody></table></div>
+    </section>
+  </div>
+</main>
+<script src="js/common.js"></script><script src="js/dashboard.js"></script>
+</body></html>

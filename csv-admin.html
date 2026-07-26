@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RPPS CSV Admin</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-icon">R</span><span>RPPS CSV ADMIN</span></a><nav class="main-nav"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><button id="logoutBtn" class="btn btn-danger hidden">Logout</button></nav></header>
+<main class="section-shell">
+  <div class="section-heading"><h1>CSV Upload, Skill Update and Analytics</h1><p id="adminMessage">This page is available only to the local demo administrator.</p></div>
+  <div id="adminContent" class="hidden">
+    <div class="stats-grid csv-stats"><div class="stat"><span id="csvUserCount">0</span><small>Users</small></div><div class="stat"><span id="csvSkillCount">0</span><small>Unique Skills</small></div><div class="stat"><span id="csvProjectCount">0</span><small>Projects</small></div><div class="stat"><span id="csvAverageMatch">0%</span><small>Average Match</small></div></div>
+    <div class="card-grid csv-card-grid">
+      <article class="info-card"><h3>User CSV</h3><p>Download user profile and saved skill data. Password hashes are excluded.</p><button class="btn btn-primary" data-export="users">Download Users CSV</button></article>
+      <article class="info-card"><h3>Project CSV</h3><p>Download or replace the current project catalogue, including task and video data.</p><button class="btn btn-primary" data-export="projects">Download Projects CSV</button><label class="btn btn-dark file-label">Upload Projects CSV<input id="projectCsvImport" type="file" accept=".csv,text/csv" hidden></label></article>
+      <article class="info-card"><h3>Skill Update CSV</h3><p>Upload skills for existing users or download the complete user-to-skill mapping.</p><button class="btn btn-primary" data-export="skills">Download Skills CSV</button><label class="btn btn-dark file-label">Upload Skills CSV<input id="skillCsvImport" type="file" accept=".csv,text/csv" hidden></label></article>
+      <article class="info-card"><h3>Recommendation Analytics CSV</h3><p>Download every user-project match, matched skills, missing skills and analytics points.</p><button class="btn btn-primary" data-export="analytics">Download Analytics CSV</button></article>
+      <article class="info-card"><h3>Analytics Point Update</h3><p>Upload project analytics points used as an additional project ranking indicator.</p><button class="btn btn-primary" data-export="analyticsPoints">Download Analytics Points</button><label class="btn btn-dark file-label">Upload Analytics Points<input id="analyticsCsvImport" type="file" accept=".csv,text/csv" hidden></label></article>
+      <article class="info-card"><h3>Task Status CSV</h3><p>Download saved daily, weekly, monthly and yearly task activity.</p><button class="btn btn-primary" data-export="tasks">Download Task Status CSV</button></article>
+    </div>
+    <section class="dashboard-card"><h2>Required CSV columns</h2><pre>Projects: id,title,skills,taskType,description,budget,startDate,endDate,resources,videoUrl,analyticsPoints
+Skills: email,skills
+Analytics points: projectId,analyticsPoints</pre></section>
+    <section class="dashboard-card"><h2>Skill Coverage Analytics</h2><div id="skillAnalytics"></div></section>
+  </div>
+</main>
+<script src="js/common.js"></script><script src="js/csv-admin.js"></script>
+</body></html>
