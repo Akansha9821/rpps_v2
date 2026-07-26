@@ -1,4 +1,4 @@
-# RPPS Static HTML/JavaScript – Version 3
+# RPPS Static HTML/JavaScript
 
 Open `index.html` directly in a browser. No Node.js, npm, Python or backend is required.
 
